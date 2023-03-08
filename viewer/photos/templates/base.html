@@ -1,0 +1,59 @@
+<!-- viewer/photos/templates/base.html -->
+
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        {% block page-title %}
+        <title>PhotoView - Dashboard</title>
+        {% endblock page-title %}
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <!-- Bulma CSS/SASS Framework -->
+        <link rel="stylesheet" href="{% static 'css/mystyles.css' %}">
+        <!-- Alpine.js JS Framework -->
+        <script src="{% static 'js/alpine.js' %}" defer></script>
+        <!-- HTMX JS Library -->
+        <script src="{% static 'js/htmx.js' %}" defer></script>
+        <style>
+            
+        </style>
+    </head>
+    <body>
+        <nav class="navbar" role="navigation" aria-label="main navigation">
+            <div class="navbar-brand">
+                <!-- Navbar Logo Image -->
+                <a class="navbar-item" href="{% url 'photos:dashboard' %}">
+                    <!-- TODO: Insert Logo Image -->
+                    {% load static %}<img src="{% static 'images/' %}" alt="NBA Logo">
+                </a>
+                <!-- Navbar Burger and Menu Items -->
+                <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </a>
+            </div>
+            <!-- Navbar Items -->
+            <div id="Navbar" class="navbar-menu">
+                <!-- Navbar Left-->
+                <div class="navbar-start">
+                    
+                </div>
+            </div>
+        </nav>
+        <div class="section">
+            <div class="container">
+                <!-- Main -->
+                {% block main %}{% endblock main %}
+                <!-- Modal -->
+                {% block site-modal %}{% endblock site-modal %}
+                <!-- JavaScript -->
+                {% block site-script %}{% endblock site-script %}
+
+                {% block page-script %}{% endblock page-script %}
+            </div>
+        </div>
+    </body>
+</html>
