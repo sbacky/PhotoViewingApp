@@ -28,6 +28,7 @@ class Photo(models.Model):
 
     image = models.ImageField(
         blank=True,
+        upload_to="viewer/static/images"
     )
 
     def __repr__(self) -> str:
