@@ -32,6 +32,7 @@ module.exports = merge(common, {
     }),
     new StylelintPlugin({
       files: Path.resolve(__dirname, "../src/**/*.s?(a|c)ss"),
+      fix: true,
     }),
     new ESLintPlugin({
       extensions: "js",
