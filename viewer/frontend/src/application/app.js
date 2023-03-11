@@ -17,6 +17,9 @@ window.Alpine = Alpine;
 
 Alpine.start();
 
+// Import fontawesome-free
+import '@fortawesome/fontawesome-free/js/all';
+
 // We can import other JS file as we like
 import "../components/sidebar";
 
