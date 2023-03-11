@@ -10,12 +10,8 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="">
-        <!-- Bulma CSS/SASS Framework -->
-        <link rel="stylesheet" href="{% static 'css/mystyles.css' %}">
-        <!-- Alpine.js JS Framework -->
-        <script src="{% static 'js/alpine.js' %}" defer></script>
-        <!-- HTMX JS Library -->
-        <script src="{% static 'js/htmx.js' %}" defer></script>
+        {% stylesheet_pack 'app' %}
+        {% Javascript_pack 'app' attrs='charset="UTF-8" defer'%}
         <style>
             
         </style>
@@ -26,7 +22,7 @@
                 <!-- Navbar Logo Image -->
                 <a class="navbar-item" href="{% url 'photos:dashboard' %}">
                     <!-- TODO: Insert Logo Image -->
-                    {% load static %}<img src="{% static 'images/' %}" alt="NBA Logo">
+                    {% load static %}<img src="{% static 'images/' %}" alt="PhotoViewer Logo">
                 </a>
                 <!-- Navbar Burger and Menu Items -->
                 <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
