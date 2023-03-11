@@ -1,0 +1,7 @@
+<!-- viewer/photos/templates/photos/photo_display.html -->
+
+{% if display == 'list' %}
+    {% include 'photos/list.html' %}
+{% elif display == 'column' %}
+    {% include 'photos/columns.html' %}
+{% endif %}

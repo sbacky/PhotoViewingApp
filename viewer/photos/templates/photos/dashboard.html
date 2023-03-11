@@ -3,5 +3,23 @@
 {% extends 'base.html' %}
 
 {% block main %}
-    
+    <div class="section">
+        <div class="container">
+            <!-- Header -->
+            <header class="block">
+                <h1 class="title is-1">PhotoViewer</h1>
+                <h3 class="subtitle is-3">View photos here!</h3>
+            </header>
+
+            <!-- Change Display -->
+            <div class="block">
+                <form></form>
+            </div>
+
+            <!-- Photos -->
+            <div class="block">
+                {% include 'photos/photo_display.html' %}
+            </div>
+        </div>
+    </div>
 {% endblock main %}
