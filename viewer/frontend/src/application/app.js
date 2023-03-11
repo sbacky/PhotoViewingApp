@@ -22,6 +22,7 @@ import '@fortawesome/fontawesome-free/js/all';
 
 // We can import other JS file as we like
 import "../components/sidebar";
+import "../../../static/js/alpine";
 
 window.document.addEventListener("DOMContentLoaded", function () {
   window.console.log("dom ready 1");
