@@ -11,7 +11,7 @@ logger = logging.getLogger(__name__)
 
 class Photo(models.Model):
     name = models.CharField(
-        max_length=15,
+        max_length=25,
     )
 
     taken_date = models.DateField(
@@ -28,7 +28,7 @@ class Photo(models.Model):
 
     image = models.ImageField(
         blank=True,
-        upload_to="viewer/static/images"
+        upload_to="static/images"
     )
 
     def __repr__(self) -> str:
