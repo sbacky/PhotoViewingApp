@@ -2,6 +2,32 @@
 
 {% extends 'base.html' %}
 
-{% block main %}
+{% block page-title %}
+    <title>PhotoViewer - {{ photo.name }}</title>
+{% endblock page-title %}
 
+{% block main %}
+    <div class="section">
+        <div class="container">
+            <nav class="breadcrumb is-medium" aria-label="breadcrumbs">
+                <ul>
+                    <li><a href="{% url 'photos:dashboard' %}">Home</a></li>
+                    <li class="is-active"><a href="{% url 'photos:detail' photo.id %}" aria-current="page">{{ photo.name }}</a></li>
+                </ul>
+            </nav>
+            <div class="box">
+                <header class="block">
+                    <h1 class="title is-1">{{ photo.name }}</h1>
+                    <p class="subtitle is-3 has-text-grey-light">{{ photo.taken_date }}</p>
+                </header>
+                <figure class="block image is-5by4">
+                    <img src="{{ photo.image.url }}">
+                </figure>
+                <div class="block content">
+                    <span>{{ photo.description }}</span>
+                    <span class="is-small has-text-grey-light">{{ photo.pub_date }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock main %}
