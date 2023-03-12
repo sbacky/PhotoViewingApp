@@ -1,0 +1,28 @@
+<!-- viewer/photos/templates/photos/list.html -->
+
+<div x-data class="columns is-multiline" id="photos">    
+    {% for photo in photos %}    
+        <div class="column is-full" :class="$store.buttons.listButton ? 'is-full' : 'is-one-third'">
+            <div class="box flex-height">
+                <figure class="block image is-5by4">
+                    <a href="{% url 'photos:detail' photo.id %}"><img src="{{ photo.image.url }}" alt="{{ photo.name }}"></a>
+                </figure>
+                <header class="block">
+                    <h2 class="title is-2"
+                        :class="$store.buttons.listButton ? 'is-2' : 'is-3'"
+                    >
+                        {{ photo.name }}
+                    </h2>
+                    <p class="subtitle is-4 has-text-grey-light"
+                        :class="$store.buttons.listButton ? 'is-4' : 'is-5'"
+                    >
+                        {{ photo.taken_date }}
+                    </p>
+                </header>
+                <p class="block">
+                    {{ photo.description }}
+                </p>
+            </div>
+        </div>
+    {% endfor %}
+</div>
