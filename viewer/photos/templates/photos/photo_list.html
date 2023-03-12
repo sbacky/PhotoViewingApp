@@ -1,8 +1,9 @@
 <!-- viewer/photos/templates/photos/list.html -->
 
+
 <div x-data class="columns is-multiline" id="photos">    
-    {% for photo in photos %}    
-        <div class="column is-full" :class="$store.buttons.listButton ? 'is-full' : 'is-one-third'">
+    {% for photo in page %}    
+        <div class="column is-full" :class="{ 'is-full': $store.buttons.listButton, 'is-one-third': $store.buttons.columnButton }">
             <div class="box flex-height">
                 <figure class="block image is-5by4">
                     <a href="{% url 'photos:detail' photo.id %}"><img src="{{ photo.image.url }}" alt="{{ photo.name }}"></a>
@@ -26,3 +27,22 @@
         </div>
     {% endfor %}
 </div>
+
+{% if hide_button %}
+
+{% else %}
+    <div x-data class="columns is-centered" id="replace-me">
+        <div class="column is-one-third"
+            :class="{ 'is-one-third': $store.buttons.columnButton, 'is-full': $store.buttons.listButton }"
+        >
+            <button class="button is-fullwidth is-success is-light is-outlined"
+                hx-post="{% url 'photos:page' page.number %}"
+                hx-target="#replace-me"
+                hx-swap="outerHTML"
+            >
+                <span class="is-size-5 has-text-weight-medium">Load more pictures...</span>
+                {% load static %}<img class="htmx-indicator" src="{% static 'images/SVG-Loaders-master/svg-loaders/bars.svg' %}">
+            </button>
+        </div>
+    </div>
+{% endif %}
