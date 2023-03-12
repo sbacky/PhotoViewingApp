@@ -5,20 +5,46 @@
 {% block main %}
     <div class="section">
         <div class="container">
+            <nav class="block breadcrumb has-bullet-separator is-medium" aria-label="breadcrumbs">
+                <ul>
+                    <li class="is-active"><a href="{% url 'photos:dashboard' %}" aria-current="page">Home</a></li>
+                </ul>
+            </nav>
             <!-- Header -->
             <header class="block">
                 <h1 class="title is-1">PhotoViewer</h1>
-                <h3 class="subtitle is-3">View photos here!</h3>
+                <p class="subtitle is-3">View photos here!</p>
             </header>
 
             <!-- Change Display -->
-            <div class="block">
-                <form></form>
+            <div x-data class="block">
+                <div class="field has-addons">
+                    <div class="control">
+                        <button @click="$store.buttons.toggleListButton(), $store.buttons.toggleColumnButton()"
+                            class="button"
+                            :class="$store.buttons.listButton && 'is-active is-success'"
+                        >
+                            <span class="icon is-small">
+                                <i class="fa-solid fa-list"></i>
+                            </span>
+                        </button>
+                    </div>
+                    <div class="control">
+                        <button @click="$store.buttons.toggleColumnButton(), $store.buttons.toggleListButton()"
+                            class="button"
+                            :class="$store.buttons.columnButton && 'is-active is-success'"
+                        >
+                            <span class="icon is-small">
+                                <i class="fa-solid fa-table-cells-large"></i>
+                            </span>
+                        </button>
+                    </div>
+                </div>
             </div>
 
             <!-- Photos -->
             <div class="block">
-                {% include 'photos/photo_display.html' %}
+                {% include 'photos/photo_list.html' %}
             </div>
         </div>
     </div>
