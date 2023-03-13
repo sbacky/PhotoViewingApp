@@ -26,7 +26,7 @@ def dashboard(request: HttpRequest) -> HttpResponse:
         request,
         "photos/dashboard.html",
         {
-            "page": page
+            "page": page,
         }
     )
 
@@ -51,7 +51,7 @@ def page(request: HttpRequest, page_num: int) -> HttpResponse:
             "photos/photo_list.html",
             {
                 "page": next_page,
-                "hide_button": hide_button
+                "hide_button": hide_button,
             }
         )
     else:
