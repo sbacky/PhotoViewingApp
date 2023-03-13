@@ -5,7 +5,12 @@
     <div class="column is-full" :class="{ 'is-full': $store.buttons.listButton, 'is-one-third': $store.buttons.columnButton }">
         <div class="box flex-height">
             <figure class="block image is-5by4">
-                <a href="{% url 'photos:detail' photo.id %}"><img class="zoom" src="{{ photo.image.url }}" alt="{{ photo.name }}"></a>
+                <a href="{% url 'photos:detail' photo.id %}">
+                    <img class="zoom" :class="{ 'zoom': $store.buttons.columnButton, 'opacity': $store.buttons.listButton }"
+                        src="{{ photo.image.url }}"
+                        alt="{{ photo.name }}"
+                    >
+                </a>
             </figure>
             <header class="block">
                 <h2 class="title is-2"
