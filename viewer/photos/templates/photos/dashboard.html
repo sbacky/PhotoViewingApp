@@ -5,7 +5,7 @@
 {% block main %}
     <div class="section">
         <div class="container">
-            <nav class="block breadcrumb has-bullet-separator is-medium" aria-label="breadcrumbs">
+            <nav class="breadcrumb has-bullet-separator is-medium" aria-label="breadcrumbs">
                 <ul>
                     <li class="is-active"><a href="{% url 'photos:dashboard' %}" aria-current="page">Home</a></li>
                 </ul>
@@ -21,21 +21,21 @@
                 <div class="field has-addons">
                     <div class="control">
                         <button @click="$store.buttons.toggleListButton(), $store.buttons.toggleColumnButton()"
-                            class="button"
-                            :class="$store.buttons.listButton && 'is-active is-success'"
+                            class="button is-medium"
+                            :class="{ 'is-active is-success': $store.buttons.listButton, 'is-success is-light is-outlined': $store.buttons.columnButton }"
                         >
-                            <span class="icon is-small">
-                                <i class="fa-solid fa-list"></i>
+                            <span class="icon is-medium">
+                                <i class="fa-solid fa-list fa-lg"></i>
                             </span>
                         </button>
                     </div>
                     <div class="control">
                         <button @click="$store.buttons.toggleColumnButton(), $store.buttons.toggleListButton()"
-                            class="button"
-                            :class="$store.buttons.columnButton && 'is-active is-success'"
+                            class="button is-medium"
+                            :class="{ 'is-active is-success': $store.buttons.columnButton, 'is-success is-light is-outlined': $store.buttons.listButton }"
                         >
-                            <span class="icon is-small">
-                                <i class="fa-solid fa-table-cells-large"></i>
+                            <span class="icon is-medium">
+                                <i class="fa-solid fa-table-cells-large fa-lg"></i>
                             </span>
                         </button>
                     </div>
