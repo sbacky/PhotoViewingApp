@@ -14,7 +14,22 @@
         {% stylesheet_pack 'app' %}
         {% javascript_pack 'app' attrs='charset="UTF-8" defer'%}
         <style>
+            .opacity {
+                opacity: 0.5;
+            }
             
+            .opacity:hover {
+                opacity: 0.7;
+            }
+            
+            .zoom {
+                transition: transform 0.2s !important; /* Animation */
+            }
+            
+            .zoom:hover {
+                transform: scale(1.05); /* (150% zoom - Note: if the zoom is too large,
+                it will go outside of the viewport) */
+            }
         </style>
     </head>
     <body hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}'>
