@@ -44,7 +44,9 @@
 
             <!-- Photos -->
             <div class="block">
-                {% include 'photos/photo_list.html' %}
+                <div x-data class="columns is-multiline" id="photos">
+                    {% include 'photos/photo_list.html' %}
+                </div>
             </div>
         </div>
     </div>

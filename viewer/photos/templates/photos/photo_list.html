@@ -1,48 +1,43 @@
 <!-- viewer/photos/templates/photos/list.html -->
 
 
-<div x-data class="columns is-multiline" id="photos">    
-    {% for photo in page %}    
-        <div class="column is-full" :class="{ 'is-full': $store.buttons.listButton, 'is-one-third': $store.buttons.columnButton }">
-            <div class="box flex-height">
-                <figure class="block image is-5by4">
-                    <a href="{% url 'photos:detail' photo.id %}"><img src="{{ photo.image.url }}" alt="{{ photo.name }}"></a>
-                </figure>
-                <header class="block">
-                    <h2 class="title is-2"
-                        :class="$store.buttons.listButton ? 'is-2' : 'is-3'"
-                    >
-                        {{ photo.name }}
-                    </h2>
-                    <p class="subtitle is-4 has-text-grey-light"
-                        :class="$store.buttons.listButton ? 'is-4' : 'is-5'"
-                    >
-                        {{ photo.taken_date }}
-                    </p>
-                </header>
-                <p class="block">
-                    {{ photo.description }}
+{% for photo in page %}    
+    <div class="column is-full" :class="{ 'is-full': $store.buttons.listButton, 'is-one-third': $store.buttons.columnButton }">
+        <div class="box flex-height">
+            <figure class="block image is-5by4">
+                <a href="{% url 'photos:detail' photo.id %}"><img class="zoom" src="{{ photo.image.url }}" alt="{{ photo.name }}"></a>
+            </figure>
+            <header class="block">
+                <h2 class="title is-2"
+                    :class="$store.buttons.listButton ? 'is-2' : 'is-3'"
+                >
+                    {{ photo.name }}
+                </h2>
+                <p class="subtitle is-4 has-text-grey-light"
+                    :class="$store.buttons.listButton ? 'is-4' : 'is-5'"
+                >
+                    {{ photo.taken_date }}
                 </p>
-            </div>
+            </header>
+            <p class="block">
+                {{ photo.description }}
+            </p>
         </div>
-    {% endfor %}
-</div>
+    </div>
+{% endfor %}
 
 {% if hide_button %}
-
 {% else %}
-    <div x-data class="columns is-centered" id="replace-me">
-        <div class="column is-one-third"
-            :class="{ 'is-one-third': $store.buttons.columnButton, 'is-full': $store.buttons.listButton }"
+    <div id="replace-me" class="column is-one-third"
+        :class="{ 'is-one-third': $store.buttons.columnButton, 'is-full': $store.buttons.listButton }"
+    >
+        <button class="button is-large is-fullwidth"
+            hx-post="{% url 'photos:page' page.number %}"
+            hx-target="#replace-me"
+            hx-swap="outerHTML"
         >
-            <button class="button is-fullwidth is-success is-light is-outlined"
-                hx-post="{% url 'photos:page' page.number %}"
-                hx-target="#replace-me"
-                hx-swap="outerHTML"
-            >
-                <span class="is-size-5 has-text-weight-medium">Load more pictures...</span>
-                {% load static %}<img class="htmx-indicator" src="{% static 'images/SVG-Loaders-master/svg-loaders/bars.svg' %}">
-            </button>
-        </div>
+            <span class="is-size-5 has-text-weight-medium">Load more pictures...</span>
+            {% load static %}<img class="htmx-indicator" src="{% static 'images/SVG-Loaders-master/svg-loaders/bars.svg' %}">
+        </button>
     </div>
 {% endif %}
