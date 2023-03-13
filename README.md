@@ -4,7 +4,7 @@ The purpose of this app is to provide a simple photo viewing application to stor
 
 ## Setup
 
-Django web framework used to manage backend like handling requests and serving the correct content. Node and Webpack Manager used to manage frontend packages and dependancies. npm used to install frontend resources, like JS and CSS libraries and frameworks and and webpack manager is used to bundle them. NVM used to manage Node and npm versions.
+Django web framework used to manage backend like handling requests and serving the correct content. Node and Webpack Manager used to manage frontend packages and dependancies. npm used to install frontend resources, like JS and CSS libraries and frameworks and webpack manager is used to bundle them. NVM used to manage Node and npm versions.
 
 Django is used because of my comfortabliity with python and the framework. Node and npm are used because of the high level of community support and most resources support it. Webpack manager is used because of its django app that takes care of all the boilerplate setup.
 
