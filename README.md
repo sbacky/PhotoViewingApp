@@ -16,4 +16,14 @@ Latest release: Version 0.1.0
 
 ### Version 0.1.0
 
-First release. Used to view photos in the web browser. Add photos in the admin console at /admin. Requires a superuser account to login. Photos require a name and an image to be saved but can optionally add a description and date taken. Photos can be viewed in a single column as a list or in three columns as a chart. This can be toggled by a group of two buttons above all the pictures. Pictures can be clicked on to go to a detail page for that picture. Breadcrumbs foudn at the top of the page to inform current page and provide navigation to previous page.
+First release. Used to view photos in the web browser. Add photos in the admin console at /admin. Requires a superuser account to login. Photos require a name and an image to be saved but can optionally add a description and date taken. 
+
+Photos can be viewed in a list view or a column view. List view: 1 photo takes up the available space and you have to scroll down to view the next photo. Column view displays 3 photos in a row for as many rows that fit in the available space and you have to scroll down to view more rows. This can be toggled by a group of two buttons above all the pictures. When in list view, photos turn slightly opaque when hovered. When in column view, pictures get slightly zoomed in when hovered.
+
+Pictures can be clicked on to go to a detail page for that picture. Detail pages are found at /photo_id. Detail pages display the same information as on the home page but the image takes up all the available space and you can only view one image at a time. Breadcrumbs found at the top of the page to inform current page and provide navigation to previous page.
+
+### Future Releases
+
+Add categories to photos as a way to organize and sort/filter them. Can add categores as a foriegn key relationship or as a parameter on photos. Create a menu in sidebar to navigate different categories on website.
+
+Add Logo to nav bar and on home page.
