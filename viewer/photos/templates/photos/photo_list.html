@@ -32,17 +32,29 @@
 {% endfor %}
 
 {% if hide_button %}
+    <div class="column is-full">
+        <a href="#top" class="button is-large is-fullwidth is-primary is-light is-outlined">
+            <span class="is-size-4 has-text-weight-semibold">Take me to the top!</span>
+        </a>
+    </div>
 {% else %}
-    <div id="replace-me" class="column is-one-third"
-        :class="{ 'is-one-third': $store.buttons.columnButton, 'is-full': $store.buttons.listButton }"
-    >
-        <button class="button is-large is-fullwidth is-link is-light is-outlined"
-            hx-post="{% url 'photos:page' page.number %}"
-            hx-target="#replace-me"
-            hx-swap="outerHTML"
-        >
-            <span class="is-size-4 has-text-weight-semibold">Load more pictures...</span>
-            {% load static %}<img class="htmx-indicator" src="{% static 'images/SVG-Loaders-master/svg-loaders/bars.svg' %}">
-        </button>
+    <div id="replace-me" class="column is-full">
+        <div class="field is-grouped">
+            <div class="control is-expanded">
+                <button class="button is-large is-fullwidth is-link is-light is-outlined"
+                    hx-post="{% url 'photos:page' page.number %}"
+                    hx-target="#replace-me"
+                    hx-swap="outerHTML"
+                >
+                    <span class="is-size-4 has-text-weight-semibold">Load more pictures...</span>
+                    {% load static %}<img class="htmx-indicator" src="{% static 'images/SVG-Loaders-master/svg-loaders/bars.svg' %}">
+                </button>
+            </div>
+            <div class="control is-expanded">
+                <a href="#top" class="button is-large is-fullwidth is-primary is-light is-outlined">
+                    <span class="is-size-4 has-text-weight-semibold">Take me to the top!</span>
+                </a>
+            </div>
+        </div>
     </div>
 {% endif %}
