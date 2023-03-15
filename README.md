@@ -1,6 +1,6 @@
 # Photo Viewing App
 
-The purpose of this app is to provide a simple photo viewing application to store and view photos. The application allows users to upload pictures from their computer and stores them in the application database. Users will be able to upload single pictures and pictures in bulk. Users can view photos in a grid style, or one at a time. When viewing pictures as a gird, users can select a picture and view it in fullscreen.
+The purpose of this projec is to provide a simple photo viewing application to store and view photos in the web browser (That isnt social media). The application allows users to upload pictures from their computer and store them in the application database. Users will be able to upload pictures one at a time. Users can view photos in a grid style, or as a list. Wether viewing pictures as a gird or a list, users can select a picture and view it in fullscreen from a detail page.
 
 Latest Release: [Version 0.1.1](#version-011)
 
