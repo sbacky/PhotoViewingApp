@@ -5,24 +5,25 @@ import logging
 
 from django.db import models
 from django.utils import timezone
+from django.db.models import CharField, DateField, TextField
 
 # Get instance of logger using namespace
 logger = logging.getLogger(__name__)
 
 class Photo(models.Model):
-    name = models.CharField(
+    name: CharField = models.CharField(
         max_length=25,
     )
 
-    taken_date = models.DateField(
+    taken_date: DateField = models.DateField(
         blank=True,
     )
 
-    pub_date = models.DateField(
+    pub_date: DateField = models.DateField(
         auto_now_add=True,
     )
 
-    description = models.TextField(
+    description: TextField = models.TextField(
         blank=True,
     )
 
