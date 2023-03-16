@@ -65,7 +65,7 @@ def page(request: HttpRequest, page_num: int) -> HttpResponse:
         )
 
 
-def detail(request: HttpResponse, pk: int) -> HttpResponse:
+def detail(request: HttpRequest, pk: int) -> HttpResponse:
     photo = Photo.objects.get(id=pk)
     return render(
         request,
