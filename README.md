@@ -32,8 +32,10 @@ Added secondary button to take user to top. Button grouped with load more pictur
 
 ### Future Releases
 
-Add categories to photos as a way to organize and sort/filter them. Can add categores as a foriegn key relationship or as a parameter on photos. Create a menu in sidebar to navigate different categories on website.
+Add categories to photos as a way to organize and sort/filter them. Can add categores as a foriegn key relationship or as a parameter on photos. Create a menu in sidebar to navigate different categories.
 
 Add Logo to nav bar and on home page.
 
 Add a previous and next button on the detail page. Previous button takes you to previous image relative to home view. Next button takes you to the next image relative to the home view.
+
+Add user account creation and login support to secure application by making users sign in to accounts to access app. Users will not be able to create an account on there own but will require a system administrator (Superuser) to create an account for them. User class to keep track of user defining information. Profile class for how the user interacts with the application.
